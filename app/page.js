@@ -1,69 +1,119 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.js
-            </code>{" "}
-            file.
+    <main className="min-h-screen bg-[#F8F7FC]">
+      {/* Hero Section */}
+      <section className="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-12 px-6 py-16 md:grid-cols-2 lg:px-12">
+        {/* Left Content */}
+        <div className="flex flex-col items-center text-center md:items-start md:text-left">
+          {/* Small Badge */}
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#E0E7FF] bg-[#EEF2FF] px-4 py-2 text-sm font-medium text-[#4F46E5]">
+            <span className="h-2 w-2 rounded-full bg-[#6366F1]"></span>
+            Simple. Fast. Free.
+          </div>
+
+          {/* Heading */}
+          <h1 className="max-w-xl text-4xl font-extrabold leading-tight tracking-tight text-[#1E1B4B] sm:text-5xl lg:text-6xl">
+            Shorten your links.
+            <span className="block text-[#6366F1]">Share them easily.</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          {/* Description */}
+          <p className="mt-6 max-w-lg text-base leading-7 text-[#64748B] sm:text-lg">
+            Create short, clean and memorable URLs in seconds. No login
+            required. Just paste your link and get started.
           </p>
+
+          {/* Buttons */}
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link href="/shorten">
+              <button className="w-full rounded-xl bg-[#6366F1] px-7 py-3.5 font-semibold text-white shadow-lg shadow-[#6366F1]/20 transition duration-200 hover:bg-[#4F46E5] hover:shadow-xl hover:shadow-[#6366F1]/25 active:scale-[0.98] sm:w-auto">
+                Try It Now →
+              </button>
+            </Link>
+
+            <Link href="https://github.com/Sanketthul?tab=repositories">
+              <button className="w-full rounded-xl border border-[#E2E8F0] bg-white px-7 py-3.5 font-semibold text-[#1E1B4B] shadow-sm transition duration-200 hover:border-[#C7D2FE] hover:bg-[#EEF2FF] sm:w-auto">
+                View on GitHub
+              </button>
+            </Link>
+          </div>
+
+          {/* Features */}
+          <div className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-[#64748B] md:justify-start">
+            <span className="flex items-center gap-2">
+              <span className="text-emerald-500">✓</span>
+              No registration
+            </span>
+
+            <span className="flex items-center gap-2">
+              <span className="text-emerald-500">✓</span>
+              Fast & simple
+            </span>
+
+            <span className="flex items-center gap-2">
+              <span className="text-emerald-500">✓</span>
+              Custom URLs
+            </span>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Right Illustration */}
+        <div className="relative flex items-center justify-center">
+          {/* Background Glow */}
+          <div className="absolute h-72 w-72 rounded-full bg-[#C7D2FE]/40 blur-3xl"></div>
+
+          {/* Image Card */}
+          <div className="relative h-[320px] w-full max-w-lg overflow-hidden rounded-3xl border border-[#E2E8F0] bg-white p-3 shadow-[0_20px_60px_rgba(30,27,75,0.12)] sm:h-[400px]">
+            <div className="relative h-full w-full overflow-hidden rounded-2xl bg-[#EEF2FF]">
+              <Image
+                alt="URL shortener illustration"
+                src="/vector.jpg"
+                fill
+                className="object-cover mix-blend-darken"
+                priority
+              />
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Bottom Feature Section */}
+      <section className="border-t border-[#E2E8F0] bg-white px-6 py-14">
+        <div className="mx-auto grid max-w-5xl gap-8 text-center sm:grid-cols-3">
+          <div>
+            <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-[#EEF2FF] text-xl text-[#6366F1]">
+              🔗
+            </div>
+            <h3 className="font-bold text-[#1E1B4B]">Easy to Use</h3>
+            <p className="mt-2 text-sm leading-6 text-[#64748B]">
+              Paste your long URL and create a short link instantly.
+            </p>
+          </div>
+
+          <div>
+            <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-[#EEF2FF] text-xl text-[#6366F1]">
+              ⚡
+            </div>
+            <h3 className="font-bold text-[#1E1B4B]">Lightning Fast</h3>
+            <p className="mt-2 text-sm leading-6 text-[#64748B]">
+              Generate short URLs quickly without unnecessary steps.
+            </p>
+          </div>
+
+          <div>
+            <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-[#EEF2FF] text-xl text-[#6366F1]">
+              ✨
+            </div>
+            <h3 className="font-bold text-[#1E1B4B]">Custom Links</h3>
+            <p className="mt-2 text-sm leading-6 text-[#64748B]">
+              Choose a memorable custom name for your shortened URL.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
