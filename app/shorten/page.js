@@ -31,7 +31,7 @@ const Shorten = () => {
 
       alert(result.message);
 
-      setGenerated(`${process.env.NEXT_PUBLIC_HOST}/${shorturl}`);
+      setGenerated(`${window.location.origin}/${shorturl}`);
       seturl("");
       setshorturl("");
     } catch (error) {
